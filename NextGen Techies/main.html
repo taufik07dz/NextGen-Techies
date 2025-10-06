@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGen Techies - Learn Coding the Smart Way</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background: #0a0a0a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      color: #007bff;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #007bff;
+    }
+
+    .hero {
+      height: 90vh;
+      background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,123,255,0.4)),
+        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') 
+        center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 60px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      max-width: 700px;
+      line-height: 1.2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 20px 0;
+      max-width: 600px;
+      color: #ddd;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .hero button {
+      padding: 12px 28px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .hero button:hover {
+      background: #0056b3;
+    }
+
+    section {
+      padding: 80px 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #007bff;
+    }
+
+    .about {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 45%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,123,255,0.3);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      color: #ccc;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .course-card {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0,123,255,0.4);
+    }
+
+    .course-card h3 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .why-us {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .why-card {
+      background: #0d0d0d;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .why-card:hover {
+      transform: scale(1.05);
+    }
+
+    .why-card h4 {
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      border-left: 4px solid #007bff;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .testimonial h5 {
+      color: #007bff;
+    }
+
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .about img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NextGen <span style="color: white;">Techies</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Empowering Young Minds to Code Their Future</h1>
+    <p>NextGen Techies makes coding fun, easy, and accessible for students from Class 2 to Class 12. Learn coding, robotics, and AI the smart way.</p>
+    <button>Get Started</button>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1559027615-5dd94a2e2f32?auto=format&fit=crop&w=800&q=80" alt="Coding Kids" />
+      <div class="about-text">
+        <p>
+          At <strong>NextGen Techies</strong>, we believe that coding is not just a skill — it's a superpower of the 21st century! 
+          We provide interactive, gamified, and age-appropriate coding lessons for school students from Grade 2 to 12.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2 class="section-title">Our Courses</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>Beginner (Class 2-5)</h3>
+        <p>Learn coding through fun games, puzzles, and visual programming tools like Scratch and Blockly.</p>
+      </div>
+      <div class="course-card">
+        <h3>Intermediate (Class 6-9)</h3>
+        <p>Dive into Python, HTML, and basic AI concepts while building your first real projects.</p>
+      </div>
+      <div class="course-card">
+        <h3>Advanced (Class 10-12)</h3>
+        <p>Master advanced coding languages, data structures, and real-world development skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="why-us">
+      <div class="why-card">
+        <h4>Interactive Learning</h4>
+        <p>Gamified and project-based learning keeps students excited and motivated.</p>
+      </div>
+      <div class="why-card">
+        <h4>Expert Mentors</h4>
+        <p>Learn from certified instructors with real-world coding experience.</p>
+      </div>
+      <div class="why-card">
+        <h4>Personalized Growth</h4>
+        <p>Track progress with detailed analytics and customized feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">What Students Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“I started coding in Class 4 with NextGen Techies and now I can build my own games!”</p>
+        <h5>- Aarav, Class 5</h5>
+      </div>
+      <div class="testimonial">
+        <p>“The teachers make coding fun and easy to understand. I love the projects!”</p>
+        <h5>- Riya, Class 8</h5>
+      </div>
+      <div class="testimonial">
+        <p>“NextGen Techies helped me prepare for national coding competitions!”</p>
+        <h5>- Karan, Class 11</h5>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    
+    <p>© 2025 NextGen Techies. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
